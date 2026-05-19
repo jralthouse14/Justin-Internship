@@ -1,26 +1,27 @@
 import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
-import AuthorImage from "../../images/author_thumbnail.jpg";
-import nftImage from "../../images/nftImage.jpg";
 import axios from "axios";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./NewItems.css"
+import CountdownTimer from "./CountdownTimer";
 
 const NewItems = () => {
 
   const { id } = useParams();
   const [loading, setLoading] = useState(true);
   const [newItems, setNewItems] = useState([]);
+  const [expiryDate, setExpiryDate] = useState(null);
 
   useEffect(() => {
     axios.get("https://us-central1-nft-cloud-functions.cloudfunctions.net/newItems")
     .then((response) => {
       setTimeout(() => {
         setNewItems(response.data);
+        setExpiryDate(response.data.expiryDate)
         setLoading(false);
-    }, 10000)
+    }, 3000)
   })
     .catch((error) => {
       console.error("No item found:", error);
@@ -90,8 +91,9 @@ const NewItems = () => {
                     <i className="fa fa-check"></i>
                   </Link>
                 </div>
-                <div className="de_countdown">5h 30m 32s</div>
-
+                <div className="de_countdown">
+                  {item.expiryDate ? <CountdownTimer targetDate={item.expiryDate} /> : <div style={{border: 'none'}}></div>}
+                </div>
                 <div className="nft__item_wrap">
                   <div className="nft__item_extra">
                     <div className="nft__item_buttons">
