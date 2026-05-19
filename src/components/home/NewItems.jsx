@@ -92,7 +92,7 @@ const NewItems = () => {
                   </Link>
                 </div>
                 <div className="de_countdown">
-                  {item.expiryDate ? <CountdownTimer targetDate={item.expiryDate} /> : <div style={{border: 'none'}}></div>}
+                  {item.expiryDate ? <CountdownTimer targetDate={item.expiryDate} /> : <div></div>}
                 </div>
                 <div className="nft__item_wrap">
                   <div className="nft__item_extra">
