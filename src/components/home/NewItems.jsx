@@ -86,6 +86,7 @@ const NewItems = () => {
                     to="/author"
                     data-bs-toggle="tooltip"
                     data-bs-placement="top"
+                    title="Creator: Monica Lucas"
                   >
                     <img className="lazy" src={item.authorImage} alt="" />
                     <i className="fa fa-check"></i>
