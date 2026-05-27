@@ -8,8 +8,6 @@ import "./NewItems.css"
 import CountdownTimer from "./CountdownTimer";
 
 const NewItems = () => {
-
-  const { id } = useParams();
   const [loading, setLoading] = useState(true);
   const [newItems, setNewItems] = useState([]);
   const [expiryDate, setExpiryDate] = useState(null);
@@ -21,7 +19,7 @@ const NewItems = () => {
         setNewItems(response.data);
         setExpiryDate(response.data.expiryDate)
         setLoading(false);
-    }, 3000)
+    }, 2000)
   })
     .catch((error) => {
       console.error("No item found:", error);
@@ -83,7 +81,7 @@ const NewItems = () => {
               <div className="nft__item">
                 <div className="author_list_pp">
                   <Link
-                    to="/author"
+                    to={`/author/${item.authorId}`}
                     data-bs-toggle="tooltip"
                     data-bs-placement="top"
                     title="Creator: Monica Lucas"

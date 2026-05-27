@@ -19,7 +19,7 @@ const HotCollections = () => {
       setTimeout(() => {
         setCollections(response.data);
         setLoading(false);
-    }, 3000)
+    }, 2000)
   })
     .catch((error) => {
       console.error("No collection found:", error);
@@ -85,7 +85,7 @@ const HotCollections = () => {
                     </Link>
                   </div>
                   <div className="nft_coll_pp">
-                    <Link to="/author">
+                    <Link to={`/author/${collection.authorId}`}>
                       <img className="lazy pp-coll" src={collection.authorImage} alt="" />
                     </Link>
                     <i className="fa fa-check"></i>

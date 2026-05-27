@@ -13,7 +13,7 @@ const TopSellers = () => {
       setTimeout(() => {
         setTopSellers(response.data);
         setLoading(false);
-    }, 3000)
+    }, 2000)
   })
     .catch((error) => {
       console.error("No author found:", error);
@@ -44,9 +44,9 @@ const TopSellers = () => {
               : 
               new Array(1).fill(0).map((_, index) => (
                 topSellers.map((author, index) =>
-                <li key={index}>
+                <li key={author.authorId}>
                   <div className="author_list_pp">
-                    <Link to="/author">
+                    <Link to={`/author/${author.authorId}`}>
                       <img
                         className="lazy pp-author"
                         src={author.authorImage}
@@ -56,7 +56,7 @@ const TopSellers = () => {
                     </Link>
                   </div>
                   <div className="author_list_info">
-                    <Link to="/author">{author.authorName}</Link>
+                    <Link to={`/author/${author.authorId}`}>{author.authorName}</Link>
                     <span>{author.price} ETH</span>
                   </div>
                 </li>
