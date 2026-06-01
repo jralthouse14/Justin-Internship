@@ -16,6 +16,10 @@
     z-index: 2;
 }
 
+.newItems {
+  padding: 10px;
+}
+
 /* 
 
 LOADING SKELETON
