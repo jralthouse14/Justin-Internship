@@ -2,6 +2,9 @@ import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import axios from "axios";
 import "../explore/ExploreItems.css";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+AOS.init()
 
 const AuthorItems = () => {
   const [loading, setLoading] = useState(true);
@@ -37,7 +40,7 @@ const AuthorItems = () => {
           </div>
           :
         author.map((authorInfo) => (
-        <div className="row" key={authorInfo}>
+        <div className="row" data-aos="fade-in" key={authorInfo}>
           {authorInfo.nftCollection.map((collection, index) => (
             <div className="col-lg-3 col-md-6 col-sm-6 col-xs-12" key={index}>
               <div className="nft__item">

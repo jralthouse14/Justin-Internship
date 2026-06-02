@@ -5,6 +5,9 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./HotCollections.css"
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+AOS.init()
 
 
 const HotCollections = () => {
@@ -64,7 +67,7 @@ const HotCollections = () => {
               <div className="small-border bg-color-2"></div>
             </div>
           </div>
-          <div className="slider-container">
+          <div data-aos="fade-in" className="slider-container">
             <Slider {...settings}>
               {loading ?
               new Array(4).fill(0).map((_, index) => (

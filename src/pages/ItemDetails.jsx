@@ -5,6 +5,9 @@ import AuthorImage from "../images/author_thumbnail.jpg";
 import nftImage from "../images/nftImage.jpg";
 import axios from "axios";
 import "./ItemDetails.css";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+AOS.init()
 
 const ItemDetails = () => {
   const [loading, setLoading] = useState(true);
@@ -61,9 +64,9 @@ const ItemDetails = () => {
           </div>
           :
           itemDetails.map((itemDetails, index) => (
-          <div key={itemDetails} className="container">
+          <div key={itemDetails} data-aos="fade-in" className="container">
             <div className="row">
-              <div className="col-md-6 text-center">
+              <div data-aos="fade-right" className="col-md-6 text-center">
                 <img
                   src={itemDetails.nftImage}
                   className="img-fluid img-rounded mb-sm-30 nft-image"

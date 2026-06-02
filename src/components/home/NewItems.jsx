@@ -6,6 +6,9 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./NewItems.css"
 import CountdownTimer from "./CountdownTimer";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+AOS.init()
 
 const NewItems = () => {
   const [loading, setLoading] = useState(true);
@@ -77,7 +80,7 @@ const NewItems = () => {
               ))
               :
           newItems.map((item, index) => (
-            <div className="newItems" key={index}>
+            <div data-aos="fade-in" className="newItems" key={index}>
               <div className="nft__item">
                 <div className="author_list_pp">
                   <Link

@@ -3,6 +3,9 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import CountdownTimer from "../home/CountdownTimer";
 import "./ExploreItems.css";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+AOS.init()
 
 const ExploreItems = ({ exploreItem }) => {
   const [explore, setExplore] = useState([]);
@@ -53,6 +56,7 @@ const ExploreItems = ({ exploreItem }) => {
         :
         explore.slice(0, visibleCount).map((exploreItem, index) => (
         <div
+          data-aos="fade-in"
           key={index}
           className="d-item col-lg-3 col-md-6 col-sm-6 col-xs-12"
           style={{ display: "block", backgroundSize: "cover" }}
