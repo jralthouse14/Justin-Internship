@@ -27,7 +27,7 @@ const NewItems = () => {
     .catch((error) => {
       console.error("No item found:", error);
     });
-  }, []);
+  }, [expiryDate]);
 
   const settings = {
     infinite: true,

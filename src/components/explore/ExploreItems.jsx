@@ -32,7 +32,7 @@ const ExploreItems = ({ exploreItem }) => {
     .catch((error) => {
       console.error("No item found:", error);
     });
-  }, [sortType]);
+  }, [sortType, expiryDate]);
 
   return (
     <>
