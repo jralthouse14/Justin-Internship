@@ -12,7 +12,6 @@ AOS.init()
 
 const HotCollections = () => {
   
-  const { id } = useParams();
   const [loading, setLoading] = useState(true);
   const [collections, setCollections] = useState([]);
 
