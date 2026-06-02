@@ -23,7 +23,7 @@ const CountdownTimer = ({ targetDate }) => {
         }, 1000);
 
         return () => clearInterval(timer);
-    }, [targetDate]);
+    });
 
     return (
         <div>
